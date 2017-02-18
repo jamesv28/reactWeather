@@ -3,11 +3,13 @@ var React = require('react');
 var WeatherForm = React.createClass({
     render: function () {
         return (
-            <form >
-                <input className="block" type="text" placeholder="Enter City Name"/>
-                <button className="btn btn-success">Get Weather!</button>
+            <div className="row">
+                <form className="form-inline">
+                    <input type="text" className="col-md-6 col-sm-6 form-control" placeholder="Enter City Name"/>
+                    <button className="btn btn-success">Get Weather!</button>
 
-            </form>
+                </form>
+            </div>
         )
     }
 });

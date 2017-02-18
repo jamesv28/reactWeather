@@ -3,9 +3,7 @@ var React = require('react');
 var WeatherMessage =- React.createClass({
     render: function () {
         return(
-            <div>
-                <p>It is 64 degrees in Denver</p>
-            </div>
+            <h3>It is 40 in Tacoma</h3>
         )
     }
 }); // end of WeatherMessage component

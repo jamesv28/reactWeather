@@ -57,8 +57,8 @@
 
 	var Main = __webpack_require__(222);
 	var Weather = __webpack_require__(224);
-	var About = __webpack_require__(225);
-	var Examples = __webpack_require__(226);
+	var About = __webpack_require__(227);
+	var Examples = __webpack_require__(228);
 
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -25499,15 +25499,23 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
+	var WeatherForm = __webpack_require__(225);
+	var Message = __webpack_require__(226);
 
 	var Weather = React.createClass({
 	  displayName: 'Weather',
 
 	  render: function render() {
 	    return React.createElement(
-	      'h3',
+	      'div',
 	      null,
-	      'Weather Component'
+	      React.createElement(
+	        'h3',
+	        null,
+	        'Weather Component'
+	      ),
+	      React.createElement(WeatherForm, null),
+	      React.createElement(Message, null)
 	    );
 	  }
 	});
@@ -25516,6 +25524,59 @@
 
 /***/ },
 /* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var WeatherForm = React.createClass({
+	    displayName: "WeatherForm",
+
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            { className: "row" },
+	            React.createElement(
+	                "form",
+	                { className: "form-inline" },
+	                React.createElement("input", { type: "text", className: "col-md-6 col-sm-6 form-control", placeholder: "Enter City Name" }),
+	                React.createElement(
+	                    "button",
+	                    { className: "btn btn-success" },
+	                    "Get Weather!"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = WeatherForm;
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var Message = React.createClass({
+	    displayName: 'Message',
+
+	    render: function render() {
+	        return React.createElement(
+	            'p',
+	            null,
+	            'It is 40 in Tacoma'
+	        );
+	    }
+	}); //end of message
+
+	module.exports = Message;
+
+/***/ },
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25537,7 +25598,7 @@
 	module.exports = About;
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
