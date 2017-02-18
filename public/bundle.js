@@ -25505,6 +25505,9 @@
 	var Weather = React.createClass({
 	  displayName: 'Weather',
 
+	  handleSearch: function handleSearch(location) {
+	    alert(location + "!");
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
@@ -25514,7 +25517,7 @@
 	        null,
 	        'Weather Component'
 	      ),
-	      React.createElement(WeatherForm, null),
+	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	      React.createElement(Message, null)
 	    );
 	  }
@@ -25533,14 +25536,26 @@
 	var WeatherForm = React.createClass({
 	    displayName: "WeatherForm",
 
+
+	    onFormSubmit: function onFormSubmit(e) {
+	        e.preventDefault();
+
+	        var location = this.refs.location.value;
+
+	        if (location.length > 0) {
+	            this.refs.location.value = "";
+	            this.props.onSearch(location);
+	        }
+	    },
+
 	    render: function render() {
 	        return React.createElement(
 	            "div",
 	            { className: "row" },
 	            React.createElement(
 	                "form",
-	                { className: "form-inline" },
-	                React.createElement("input", { type: "text", className: "col-md-6 col-sm-6 form-control", placeholder: "Enter City Name" }),
+	                { className: "form-inline", onSubmit: this.onFormSubmit },
+	                React.createElement("input", { type: "text", className: "col-md-6 col-sm-6 form-control", placeholder: "Enter City Name", ref: "location" }),
 	                React.createElement(
 	                    "button",
 	                    { className: "btn btn-success" },
