@@ -25503,24 +25503,38 @@
 	var Message = __webpack_require__(226);
 
 	var Weather = React.createClass({
-	  displayName: 'Weather',
+	    displayName: 'Weather',
 
-	  handleSearch: function handleSearch(location) {
-	    alert(location + "!");
-	  },
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      null,
-	      React.createElement(
-	        'h3',
-	        null,
-	        'Weather Component'
-	      ),
-	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      React.createElement(Message, null)
-	    );
-	  }
+	    getInitialState: function getInitialState() {
+	        return {
+	            location: "Miami",
+	            temp: 88
+	        };
+	    },
+
+	    handleSearch: function handleSearch(location) {
+	        this.setState({
+	            location: location,
+	            temp: 23
+	        });
+	    },
+	    render: function render() {
+	        var _state = this.state,
+	            temp = _state.temp,
+	            location = _state.location;
+
+	        return React.createElement(
+	            'div',
+	            null,
+	            React.createElement(
+	                'h3',
+	                null,
+	                'Weather Component'
+	            ),
+	            React.createElement(WeatherForm, { onSearch: this.handleSearch }),
+	            React.createElement(Message, { temp: temp, location: location })
+	        );
+	    }
 	});
 
 	module.exports = Weather;
@@ -25579,11 +25593,20 @@
 	var Message = React.createClass({
 	    displayName: 'Message',
 
+
 	    render: function render() {
+	        var _props = this.props,
+	            temp = _props.temp,
+	            location = _props.location;
+
+
 	        return React.createElement(
-	            'p',
+	            'h4',
 	            null,
-	            'It is 40 in Tacoma'
+	            'It is ',
+	            temp,
+	            ' in ',
+	            location
 	        );
 	    }
 	}); //end of message
