@@ -25508,28 +25508,46 @@
 
 	    getInitialState: function getInitialState() {
 	        return {
-	            location: "Miami",
-	            temp: 88
+	            isLoading: false
 	        };
 	    },
 
 	    handleSearch: function handleSearch(location) {
 	        var that = this;
 
+	        this.setState({ isLoading: true });
+
 	        OpenWeatherMap.getTemp(location).then(function (temp) {
 	            that.setState({
+	                isLoading: false,
 	                location: location,
 	                temp: temp
 	            });
 	        }, function (errMessage) {
 	            alert(errMessage);
+	            that.setState({ isLoading: false });
 	        });
 	    },
 	    render: function render() {
+	        //  inline-source-map || eval-source-map
 	        var _state = this.state,
+	            isLoading = _state.isLoading,
 	            temp = _state.temp,
 	            location = _state.location;
 
+
+	        debugger;
+	        function renderMessage() {
+	            if (isLoading) {
+	                return React.createElement(
+	                    'h3',
+	                    null,
+	                    'Fetching Weather...'
+	                );
+	            } else if (temp && location) {
+	                return React.createElement(Message, { temp: temp, location: location });
+	            }
+	        }
 	        return React.createElement(
 	            'div',
 	            null,
@@ -25539,7 +25557,7 @@
 	                'Weather Component'
 	            ),
 	            React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	            React.createElement(Message, { temp: temp, location: location })
+	            renderMessage()
 	        );
 	    }
 	});
