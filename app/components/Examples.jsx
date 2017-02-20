@@ -9,7 +9,7 @@ var React = require('react');
 // }); // end of example
 var Examples = (props) => {
     return (
-        <h3>Abo0ut Component</h3>
+        <h3>Examples Component</h3>
     )
 };
 module.exports = Examples;

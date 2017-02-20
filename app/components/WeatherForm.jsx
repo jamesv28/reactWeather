@@ -18,7 +18,7 @@ var WeatherForm = React.createClass({
             <div className="row">
                 <form className="form-inline" onSubmit={this.onFormSubmit}>
                     <input type="text" className="col-md-6 col-sm-6 form-control" placeholder="Enter City Name" ref="location"/>
-                    <button className="btn btn-success">Get Weather!</button>
+                    <button className="button success">Get Weather!</button>
 
                 </form>
             </div>
