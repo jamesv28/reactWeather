@@ -31,7 +31,6 @@ var Weather = React.createClass({
         //  inline-source-map || eval-source-map
         var {isLoading, temp, location} = this.state;
 
-      debugger;
       function renderMessage() {
           if(isLoading) {
               return <h3>Fetching Weather...</h3>;
