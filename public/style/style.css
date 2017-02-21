@@ -16,3 +16,17 @@ h1,h2,h3,h4,h5,h6,p {
 .bulletP {
     list-style-position: inside;
 }
+
+.fLeft {
+    float: left;
+}
+
+.weatherImg {
+    height: 200px;
+    width: 200px;
+    margin:0 10px 0 10px;
+}
+
+.centerImg {
+    margin:0 auto;
+}
