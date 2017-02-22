@@ -6,7 +6,7 @@ var Message = React.createClass({
         var {temp, location} = this.props;
 
         return (
-            <h4>It is {temp} in {location}</h4>
+            <h4 className="text-center">It is {temp} in {location}</h4>
         )
     }
 }); //end of message

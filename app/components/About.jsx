@@ -6,12 +6,12 @@ var About = (props) => {
         <h2 className="text-center">About React Weather</h2>
         <p>I would really like to add some images but am having difficulty right now</p>
         <div className="centerImg">
-          <img className="weatherImg" src={'./img/tornado.jpg'}/>
-          <img className="weatherImg" src={'./img/sandstorm.jpg'}/>
-          <img className="weatherImg" src={'../img/mirage.jpg'} />
-          <img className="weatherImg" src={'../img/eclipse.jpg'} />
-          <img className="weatherImg" src={'../img/monsoon.jpg'} />
-          <img className="weatherImg" src={'../img/pyrocumulous.jpg'} />
+          <img className="weatherImg centerImg" src={'./img/tornado.jpg'}/>
+          <img className="weatherImg centerImg" src={'./img/sandstorm.jpg'}/>
+          <img className="weatherImg centerImg" src={'../img/mirage.jpg'} />
+          <img className="weatherImg centerImg" src={'../img/eclipse.jpg'} />
+          <img className="weatherImg centerImg" src={'../img/monsoon.jpg'} />
+          <img className="weatherImg centerImg" src={'../img/pyrocumulous.jpg'} />
         </div>
       </div>
   )
